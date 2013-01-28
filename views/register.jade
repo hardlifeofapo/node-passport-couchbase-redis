@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Create new account
+  form(action="/register", method="post")
+    div
+      label Email:
+      input(type="text", name="emailAddress")
+    div
+      label Password:
+      input(type="password", name="password")
+    div
+      input(type="submit", value="Join!")
+      p or 
+        a(href='/login', title='Login') Login
+    if("undefined" != typeof( message ))
+      #errors=message

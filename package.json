@@ -1,0 +1,22 @@
+{
+  "name": "node-passport-couchbase-redis",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "express": "3.0.6",
+    "jade": "*",
+    "baseview": "*",
+    "couchbase": "*",
+    "redis": "*",
+    "path": "*",
+    "async": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "connect-flash": "*",
+    "redis" : "*",
+    "connect-redis" : "*",
+    "mime" : "*",
+    "uglify-js" : "*",
+    "active-x-obfuscator" : "*"
+  }
+}
