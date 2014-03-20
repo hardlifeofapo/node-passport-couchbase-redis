@@ -17,6 +17,7 @@
     "connect-redis" : "*",
     "mime" : "*",
     "uglify-js" : "*",
-    "active-x-obfuscator" : "*"
+    "active-x-obfuscator" : "*",
+		"express-session" : "*"
   }
 }

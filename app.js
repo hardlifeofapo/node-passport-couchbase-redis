@@ -4,12 +4,13 @@ var express = require('express')
   , path = require('path')
   , passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy
-  , RedisStore = require('connect-redis')(express)
   , RedisDB = require('redis')
   , User = require('./models/User')
   , routes = require('./routes')
   , index = require('./routes/index')
-  , users = require('./routes/users');
+  , users = require('./routes/users')
+	, session = require('express-session')
+	, RedisStore = require('connect-redis')(session);
   
 
 // configure Express
@@ -22,7 +23,7 @@ app.configure(function() {
   app.use(express.methodOverride());
   app.use(passport.initialize());
   // Redis will store sessions
-  app.use(express.session( { store: new RedisStore(), secret: 'keyboard cat', cookie: { secure: false, maxAge:86400000 } } ));
+	app.use(session({ store: new RedisStore(), secret: 'keyboard cat', cookie: { secure: false, maxAge:86400000 } } ));
   // Initialize Passport!  Also use passport.session() middleware, to support
   // persistent login sessions (recommended).
   app.use(passport.initialize());
